@@ -215,25 +215,23 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-1px);
 }
 
-.btn-theme-toggle {
-  padding: 10px 20px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  border-radius: var(--border-radius-sm);
-  border: 1px solid var(--color-border-gold);
-  background-color: transparent;
-  color: var(--color-text-primary);
+.theme-toggle {
+  background: none;
+  border: none;
   cursor: pointer;
+  color: var(--color-gold-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin-left: 16px;
+  font-size: 1.25rem;
   transition: var(--transition-smooth);
 }
 
-.btn-theme-toggle:hover {
-  border-color: var(--color-gold-accent);
-  color: var(--color-gold-accent);
-  background-color: var(--color-gold-light);
-  transform: translateY(-1px);
+.theme-toggle:hover {
+  transform: scale(1.15);
+  color: var(--color-gold-hover);
 }
 
 .btn-block {
@@ -1710,4 +1708,18 @@ textarea.form-control {
     gap: 8px;
     align-items: center;
   }
+}
+
+/* Theme Toggle Icon Display Rules */
+.theme-toggle .sun-icon {
+  display: block;
+}
+.theme-toggle .moon-icon {
+  display: none;
+}
+body.theme-classic .theme-toggle .sun-icon {
+  display: none !important;
+}
+body.theme-classic .theme-toggle .moon-icon {
+  display: block !important;
 }
