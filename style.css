@@ -4,28 +4,45 @@
   Colors: Obsidian (#090a0b), Slate Carbon (#111315), Champagne Gold (#cda87a), Platinized White (#f3f4f6)
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 /* --- CUSTOM VARIABLES --- */
 :root {
-  --color-primary-dark: #090a0b;     /* Obsidian Black */
-  --color-card-dark: #121416;        /* Slate Carbon */
-  --color-gold-accent: #cda87a;      /* Champagne Gold */
-  --color-gold-hover: #b39062;       /* Burnished Gold */
-  --color-gold-light: #1f1f1d;       /* Dark Gold Tint */
-  --color-text-primary: #f3f4f6;     /* Platinized White */
-  --color-text-muted: #9ba1a6;       /* Brushed Steel Gray */
-  --color-border-gold: rgba(205, 168, 122, 0.18); /* Delicate Gold Frame */
+  --color-primary-dark: #121212;     /* Matte Charcoal */
+  --color-card-dark: #1a1a1a;        /* Pure Jet Black / Carbon */
+  --color-gold-accent: #4a90e2;      /* Electric Steel Blue */
+  --color-gold-hover: #357abd;       /* Steel Blue Hover */
+  --color-gold-light: rgba(74, 144, 226, 0.08); /* Electric Blue Tint */
+  --color-text-primary: #e5e5e5;     /* Off-White */
+  --color-text-muted: #9ca3af;       /* Steel Gray */
+  --color-border-gold: rgba(74, 144, 226, 0.18); /* Delicate Blue Frame */
   --color-border-muted: rgba(255, 255, 255, 0.06);
+  --color-header-bg: rgba(18, 18, 18, 0.92);
+  --color-compliance-text: rgba(229, 229, 229, 0.25);
   
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-gold-glow: 0 8px 30px rgba(205, 168, 122, 0.08);
+  --shadow-gold-glow: 0 8px 30px rgba(74, 144, 226, 0.08);
   --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.4);
   --border-radius-sm: 2px; /* Sharp, geometric lines look more premium than round bubbles */
   --border-radius-md: 4px;
+}
+
+/* --- CLASSIC LIGHT MODE OVERRIDES --- */
+body.theme-classic {
+  --color-primary-dark: #fbfaf8;     /* Premium Alabaster / Warm White */
+  --color-card-dark: #ffffff;        /* Pure White */
+  --color-gold-accent: #2c5282;      /* Midnight Steel Blue Accent */
+  --color-gold-hover: #1a365d;       /* Midnight Blue Hover */
+  --color-gold-light: rgba(44, 82, 130, 0.06); /* Soft Blue Tint */
+  --color-text-primary: #1a1d20;     /* Obsidian Charcoal */
+  --color-text-muted: #5e646a;       /* Steel Gray */
+  --color-border-gold: rgba(44, 82, 130, 0.15); /* Soft Blue Frame */
+  --color-border-muted: rgba(0, 0, 0, 0.06);
+  --color-header-bg: rgba(251, 250, 248, 0.92);
+  --color-compliance-text: rgba(26, 29, 32, 0.35);
 }
 
 /* --- RESET & GLOBAL STYLES --- */
@@ -198,6 +215,27 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-1px);
 }
 
+.btn-theme-toggle {
+  padding: 10px 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-border-gold);
+  background-color: transparent;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-theme-toggle:hover {
+  border-color: var(--color-gold-accent);
+  color: var(--color-gold-accent);
+  background-color: var(--color-gold-light);
+  transform: translateY(-1px);
+}
+
 .btn-block {
   width: 100%;
 }
@@ -206,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 .header {
   position: sticky;
   top: 0;
-  background-color: rgba(9, 10, 11, 0.92);
+  background-color: var(--color-header-bg);
   backdrop-filter: blur(15px);
   border-bottom: 1px solid var(--color-border-gold);
   z-index: 1000;
@@ -466,15 +504,15 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--color-card-dark);
-  color: var(--color-text-primary);
+  background-color: #161a22; /* Obsidian Navy Cover */
+  color: #f3f4f6; /* Platinized White */
   padding: 50px 36px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: var(--border-radius-sm);
-  border: 1px solid var(--color-border-gold);
-  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(74, 144, 226, 0.25);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.85);
 }
 
 .book-cover::before {
@@ -484,7 +522,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 16px;
   right: 16px;
   bottom: 16px;
-  border: 1px solid rgba(205, 168, 122, 0.25);
+  border: 1px solid rgba(213, 189, 156, 0.35); /* Elegant gold frame */
   border-radius: var(--border-radius-sm);
   pointer-events: none;
 }
@@ -494,7 +532,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.75rem;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--color-gold-accent);
+  color: #d5bd9c; /* Gold header tag */
 }
 
 .book-title-area {
@@ -515,8 +553,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-gold-accent);
-  border-top: 1px solid rgba(205, 168, 122, 0.3);
+  color: #d5bd9c;
+  border-top: 1px solid rgba(213, 189, 156, 0.3);
   padding-top: 20px;
   display: inline-block;
   font-weight: 500;
@@ -1502,7 +1540,7 @@ textarea.form-control {
   padding-top: 24px;
   border-top: 1px solid var(--color-border-muted);
   font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--color-compliance-text);
   line-height: 1.8;
   letter-spacing: 0.2px;
 }

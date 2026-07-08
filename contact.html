@@ -7,8 +7,16 @@
   <title>Contact Us — The Master Horologist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme === 'classic') {
+        document.body.classList.add('theme-classic');
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -28,6 +36,7 @@
       </nav>
 
       <div class="nav-actions">
+        <button class="btn btn-theme-toggle" id="themeToggle" style="padding: 10px 16px; font-size: 0.75rem; margin-right: 8px;">Classic Mode</button>
         <a href="product.html" class="btn btn-primary btn-nav-cta">Buy Now</a>
         <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
           <span class="hamburger"></span>
@@ -119,7 +128,7 @@
 
             <div class="form-group">
               <label class="form-label" for="contactSubject">Subject</label>
-              <select id="contactSubject" class="form-control" style="appearance: none; background: var(--color-primary-dark) url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2212%22 height%3D%2212%22 fill%3D%22none%22 stroke%3D%22%23cda87a%22%3E%3Cpath stroke-linecap%3D%22round%22 stroke-linejoin%3D%22round%22 stroke-width%3D%222%22 d%3D%22M2 4l4 4 4-4%22%2F%3E%3C%2Fsvg%3E') no-repeat right 16px center;" required>
+              <select id="contactSubject" class="form-control" style="appearance: none; background: var(--color-primary-dark) url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2212%22 height%3D%2212%22 fill%3D%22none%22 stroke%3D%22%234a90e2%22%3E%3Cpath stroke-linecap%3D%22round%22 stroke-linejoin%3D%22round%22 stroke-width%3D%222%22 d%3D%22M2 4l4 4 4-4%22%2F%3E%3C%2Fsvg%3E') no-repeat right 16px center;" required>
                 <option value="" disabled selected>Select an option</option>
                 <option value="billing">Billing &amp; Transaction Query</option>
                 <option value="access">Download Link &amp; Access Issues</option>
@@ -230,6 +239,24 @@
         formStatus.style.display = 'block';
       }, 1200);
     });
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme === 'classic') {
+        themeToggle.innerText = 'Dark Mode';
+      } else {
+        themeToggle.innerText = 'Classic Mode';
+      }
+
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('theme-classic');
+        const isClassic = document.body.classList.contains('theme-classic');
+        localStorage.setItem('theme', isClassic ? 'classic' : 'dark');
+        themeToggle.innerText = isClassic ? 'Dark Mode' : 'Classic Mode';
+      });
+    }
   </script>
 </body>
 </html>
