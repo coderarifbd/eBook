@@ -513,6 +513,13 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.85);
 }
 
+.book-cover h1,
+.book-cover h2,
+.book-cover h3,
+.book-cover h4 {
+  color: #f3f4f6 !important;
+}
+
 .book-cover::before {
   content: '';
   position: absolute;
