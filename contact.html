@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with the support team for The Master Horologist eBook. Submit queries about orders, billing, or licensing.">
+  <title>Contact Us — The Master Horologist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        THE MASTER<span>HOROLOGIST</span>
+      </a>
+      
+      <nav class="nav-menu" id="navMenu">
+        <a href="product.html" class="nav-link">The eBook</a>
+        <a href="index.html#features" class="nav-link">What's Inside</a>
+        <a href="index.html#author" class="nav-link">The Author</a>
+        <a href="index.html#faq" class="nav-link">FAQs</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="product.html" class="btn btn-primary btn-nav-cta">Buy Now</a>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag">Direct Inquiries</span>
+        <h1 class="section-title">Get in Touch</h1>
+        <p class="section-subtitle">
+          Have questions regarding billing, download access, or licensing rights? Our specialized customer success team is here to assist you.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Contact Information Column -->
+        <div class="contact-info">
+          <h2 style="font-size: 2rem; margin-bottom: 20px;">Contact Information</h2>
+          <p style="color: var(--color-text-muted); margin-bottom: 30px;">
+            We strive to maintain highly responsive, bank-compliant customer support channels. We process all customer requests manually to ensure premium attention.
+          </p>
+
+          <div class="contact-info-list">
+            <!-- Email -->
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="contact-info-text">
+                <h4>Customer Support Email</h4>
+                <p><a href="mailto:support@horologyguide.com" class="text-gold">support@horologyguide.com</a></p>
+              </div>
+            </div>
+
+            <!-- Response Time -->
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="contact-info-text">
+                <h4>Guaranteed Response Time</h4>
+                <p>All emails are reviewed and answered within 24 hours of receipt.</p>
+              </div>
+            </div>
+
+            <!-- Registered Office -->
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="contact-info-text">
+                <h4>Registered Business Address</h4>
+                <p>
+                  Horology Press LLC<br>
+                  123 Precision Way, Suite 400<br>
+                  Wilmington, DE 19801
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Column -->
+        <div class="contact-form-wrapper">
+          <h3 style="font-size: 1.4rem; margin-bottom: 24px;">Submit a Support Ticket</h3>
+          
+          <form id="contactForm">
+            <div class="form-group">
+              <label class="form-label" for="contactName">Your Full Name</label>
+              <input type="text" id="contactName" class="form-control" placeholder="E.g., Jean Dupont" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" class="form-control" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="orderId">Order Reference ID (Optional)</label>
+              <input type="text" id="orderId" class="form-control" placeholder="E.g., TXN-982736-HP">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactSubject">Subject</label>
+              <select id="contactSubject" class="form-control" style="appearance: none; background: var(--color-primary-dark) url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2212%22 height%3D%2212%22 fill%3D%22none%22 stroke%3D%22%23cda87a%22%3E%3Cpath stroke-linecap%3D%22round%22 stroke-linejoin%3D%22round%22 stroke-width%3D%222%22 d%3D%22M2 4l4 4 4-4%22%2F%3E%3C%2Fsvg%3E') no-repeat right 16px center;" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="billing">Billing &amp; Transaction Query</option>
+                <option value="access">Download Link &amp; Access Issues</option>
+                <option value="licensing">Licensing &amp; Permissions</option>
+                <option value="feedback">General Questions &amp; Feedback</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Detailed Message</label>
+              <textarea id="contactMessage" class="form-control" placeholder="Describe your request in detail..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-dark btn-block" style="padding: 16px 28px;">Send Message</button>
+          </form>
+
+          <div id="formStatus" class="form-status success">
+            Thank you. Your message has been received securely. A support ticket has been created and our team will contact you back within 24 hours.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">THE MASTER<span>HOROLOGIST</span></div>
+          <p class="footer-desc">
+            A premium publication dedicated to independent watchmaking, mechanical assembly, and caliber restoration.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="product.html" class="footer-link">Detailed Specifications</a></li>
+            <li><a href="index.html#features" class="footer-link">Inside the Book</a></li>
+            <li><a href="index.html#author" class="footer-link">About the Author</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Legal Policy</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="refund.html" class="footer-link">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Corporate Contact</h4>
+          <div class="footer-contact-info">
+            <span>Horology Press LLC</span>
+            <span>123 Precision Way, Suite 400</span>
+            <span>Wilmington, DE 19801</span>
+            <span>Email: support@horologyguide.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Horology Press LLC. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="privacy.html" class="footer-bottom-link">Privacy</a>
+          <a href="terms.html" class="footer-bottom-link">Terms</a>
+          <a href="refund.html" class="footer-bottom-link">Refunds</a>
+        </div>
+      </div>
+
+      <div class="compliance-text">
+        Merchant Compliance Statement: The eBook "The Master Horologist: A Complete Guide to Independent Watchmaking" is sold as a digital-only publication. Purchase grants a single-user license to download and access the publication. Under DE state regulation, all digital deliveries are processed immediately and are subject to the Refund and Cancellation terms outlined herein. Transactions are processed securely via SSL encryption.
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE MENU AND FORM SCRIPTS -->
+  <script>
+    // Mobile Navigation Toggle
+    const mobileNavToggle = document.getElementById('mobileNavToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileNavToggle.addEventListener('click', () => {
+      mobileNavToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Form Submission Handler
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Simple visual simulation of sending
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Submitting Ticket...';
+
+      setTimeout(() => {
+        contactForm.style.display = 'none';
+        formStatus.style.display = 'block';
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
