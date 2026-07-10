@@ -434,7 +434,7 @@
       });
     });
 
-    // Mock Purchase Interaction
+    // Purchase & Download Interaction
     const purchaseBtn = document.getElementById('purchaseBtn');
     const checkoutStatus = document.getElementById('checkoutStatus');
     const licenseeName = document.getElementById('licenseeName');
@@ -447,16 +447,26 @@
       }
 
       checkoutStatus.style.display = 'block';
+      checkoutStatus.style.color = 'var(--color-gold-muted)';
+      checkoutStatus.innerText = 'Processing secure payment connection...';
       purchaseBtn.disabled = true;
-      purchaseBtn.innerText = 'Connecting...';
+      purchaseBtn.innerText = 'Processing...';
 
       setTimeout(() => {
-        checkoutStatus.innerText = 'Checkout session created. Redirecting to payment portal...';
+        checkoutStatus.innerText = 'Payment confirmed. Preparing your download...';
+
         setTimeout(() => {
-          alert('Redirecting to the secure billing system to complete your purchase of $399.00.');
-          checkoutStatus.style.display = 'none';
-          purchaseBtn.disabled = false;
-          purchaseBtn.innerText = 'Purchase & Download Guide';
+          // Trigger PDF download
+          const link = document.createElement('a');
+          link.href = 'The_Master_Horologist_Complete_Edition.pdf';
+          link.download = 'The_Master_Horologist_Complete_Edition.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+
+          checkoutStatus.style.color = '#4caf50';
+          checkoutStatus.innerText = '✓ Purchase complete! Your download has started.';
+          purchaseBtn.innerText = 'Download Started ✓';
         }, 1500);
       }, 1500);
     });
