@@ -55,6 +55,7 @@ body.theme-classic {
 html {
   scroll-behavior: smooth;
   background-color: var(--color-primary-dark);
+  overflow-x: hidden;
 }
 
 body {
@@ -64,6 +65,7 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   font-weight: 300; /* Reﬁned, high-end editorial weight */
+  overflow-x: hidden;
 }
 
 a {
@@ -602,6 +604,11 @@ h1, h2, h3, h4, h5, h6 {
   height: 240px;
   border: 1px solid rgba(205, 168, 122, 0.06);
   border-radius: 50%;
+}
+
+@keyframes rotateGear {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 /* --- FEATURES SECTION --- */
@@ -1620,32 +1627,57 @@ textarea.form-control {
   letter-spacing: 0.2px;
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* ==========================================
+   RESPONSIVE SYSTEM — All Breakpoints
+   ========================================== */
+
+/* --- 1024px: Tablet Landscape --- */
 @media (max-width: 1024px) {
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-grid {
+    gap: 50px;
+  }
 }
 
+/* --- 768px: Tablet Portrait / Mobile --- */
 @media (max-width: 768px) {
-  h1 { font-size: 3rem; }
-  h2 { font-size: 2.2rem; }
-  
+  /* Global */
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2rem; }
+
   .section-header {
     margin-bottom: 50px;
   }
-  
+
   .section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
-  
-  /* Navigation */
+
+  /* --- Navigation --- */
   .mobile-nav-toggle {
     display: block;
     z-index: 1100;
   }
-  
+
   .nav-menu {
     position: fixed;
     top: 90px;
@@ -1663,127 +1695,324 @@ textarea.form-control {
     transition: var(--transition-smooth);
     z-index: 999;
   }
-  
+
   .nav-menu.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
-  
-  .nav-actions {
+
+  .nav-actions .btn-nav-cta {
     display: none;
   }
-  
-  /* Hero */
+
+  /* --- Hero Section --- */
   .hero {
     padding: 70px 0;
   }
-  
+
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 50px;
     text-align: center;
   }
-  
+
   .hero-pretitle {
     justify-content: center;
   }
-  
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
   .hero-cta-wrapper {
     justify-content: center;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
   }
-  
-  .hero-title {
-    font-size: 3rem;
-  }
-  
+
   .hero-benefits-list {
-    align-items: center;
+    align-items: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
   }
-  
-  /* Features */
+
+  .hero-image-wrapper {
+    overflow: hidden;
+  }
+
+  .book-mockup-container {
+    width: 260px;
+    height: 378px;
+  }
+
+  /* --- Features Section --- */
   .features {
     padding: 80px 0;
   }
-  
-  /* Author */
+
+  .feature-card {
+    padding: 36px 24px;
+  }
+
+  /* --- Book Overview Section --- */
+  .book-overview {
+    padding: 70px 0;
+  }
+
+  .book-overview-stats {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  /* --- Author Section --- */
   .author {
     padding: 80px 0;
   }
-  
+
   .author-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
   }
-  
+
   .author-image-placeholder {
-    height: 420px;
+    height: 360px;
+    padding: 32px;
   }
-  
-  /* FAQ */
+
+  .author-bio {
+    max-width: 100%;
+  }
+
+  .author-bio-lead {
+    font-size: 1.6rem;
+  }
+
+  /* --- FAQ Section --- */
   .faq {
     padding: 80px 0;
   }
-  
+
   .faq-layout {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
   }
-  
-  /* Product Page */
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-  
-  .product-gallery {
+
+  .faq-intro {
     position: static;
   }
-  
-  /* Contact Page */
+
+  .faq-intro h2 {
+    font-size: 2rem;
+  }
+
+  .faq-contact-card {
+    padding: 24px;
+  }
+
+  .accordion-header {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .accordion-content-inner {
+    padding: 0 20px 24px 20px;
+  }
+
+  /* --- Product Page --- */
+  .product-detail {
+    padding: 70px 0 100px 0;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .product-gallery {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-info-column {
+    max-width: 100%;
+  }
+
+  .guarantee-box {
+    max-width: 100% !important;
+    width: 100%;
+  }
+
+  .product-title {
+    font-size: 2.2rem;
+  }
+
+  .product-price-current {
+    font-size: 2.5rem;
+  }
+
+  .product-meta-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .chapter-name {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    font-size: 0.95rem;
+  }
+
+  .chapter-header {
+    padding: 16px 18px;
+  }
+
+  .chapters-preview {
+    margin-top: 50px;
+  }
+
+  /* --- Contact Page --- */
+  .contact-section {
+    padding: 70px 0 100px 0;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 50px;
   }
-  
-  /* Footer */
-  .footer {
-    padding: 80px 0 40px 0;
+
+  .contact-form-wrapper {
+    padding: 32px 24px;
   }
-  
+
+  /* --- Legal Pages --- */
+  .legal-page {
+    padding: 70px 0 100px 0;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    padding: 70px 0 40px 0;
+  }
+
   .footer-grid {
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
     text-align: center;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
   }
 }
 
+/* --- 480px: Small Mobile --- */
 @media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+
+  /* Features */
   .features-grid {
     grid-template-columns: 1fr;
   }
-  
+
+  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 28px;
   }
-  
+
+  /* Author */
   .author-credentials {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
+  .author-image-placeholder {
+    height: 300px;
+    padding: 20px;
+  }
+
+  .author-name-tag {
+    font-size: 1.5rem;
+  }
+
+  /* Book Mockup */
+  .book-mockup-container {
+    width: 220px;
+    height: 320px;
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .price-current {
+    font-size: 1.8rem;
+  }
+
+  /* Accordion / FAQ */
+  .faq-contact-card {
+    padding: 20px;
+  }
+
+  /* Product */
+  .purchase-card {
+    padding: 20px;
+  }
+
+  .product-price-current {
+    font-size: 2rem;
+  }
+
   .product-price-flex {
     flex-direction: column;
-    gap: 8px;
-    align-items: center;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .checkout-badge-row {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .product-title {
+    font-size: 1.9rem;
+  }
+
+  /* Contact */
+  .contact-form-wrapper {
+    padding: 24px 16px;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 14px 20px;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+  }
+
+  /* Section tags */
+  .section-tag {
+    letter-spacing: 2px;
+    font-size: 0.7rem;
   }
 }
 
